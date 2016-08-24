@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+		<title>Products</title>
+	</head>
+	<body>
+	<h3>Products</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Price</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			{%for x in product%}
+				<td>{{x['name']}}</td>
+				<td>{{x['description']}}</td>
+				<td>{{x['price']}}</td>
+
+				 
+				 <td><a href="/show/{{x['id']}}">Show</a><a href="/edit/{{x['id']}}">Edit</a><form action="/delete/{{x['id']}}" method="POST"><input type="submit" name="remove" value="Remove" ></form></input></form></td>
+			</tr>
+			{%endfor%}
+		</tbody>
+	</table>
+	<a href="/addnew">Ad a new product</a>
+	</body>
+</html>

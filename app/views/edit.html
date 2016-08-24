@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+		<title>Edit Products</title>
+	</head>
+	<body>
+		{%for x in product %}
+		<h3>Edit Product {{x['id']}}</h3>
+		<form action="/update" method="POST"><br>
+			Name<br>
+			<input type="text" name="name" value="{{x['name']}}"><br>
+			Description<br>
+			<input type="text" name="description"  value="{{x['description']}}"><br>
+			Price<br>
+			<input type="text" name="price"  value="{{x['price']}}"><br>
+			<input type="hidden" name="id" value="{{x['id']}}" >
+			<input type="submit" value="Update">
+
+		</form>
+		<a href="/show/{{x['id']}}">Show</a><a href="/">Back</a>
+		{%endfor%}
+	</body>
+</html>

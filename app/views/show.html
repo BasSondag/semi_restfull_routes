@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+		<title>Show Products</title>
+	</head>
+	<body>
+		{%for x in product %}
+		<h3>Product {{x['id']}}</h3>
+			<p>Name: {{x['name']}}</p>
+			<p>Description: {{x['description']}}</p>
+			<p>Price: {{x['price']}}</p>
+		
+		<a href="/edit/{{x['id']}}">Edit</a><a href="/">Back</a>
+		{%endfor%}
+	</body>
+</html>
